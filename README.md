@@ -16,6 +16,8 @@ Then use the namespace:
 $ oc project myNameSpace
 ```
 
+## MariaDB
+
 ## WordPress
 
 You need to create the PVC, and then mount it as /data. Start the Wordpress pod and copy files from /opt/app-root/src/ to /data.
