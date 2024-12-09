@@ -4,7 +4,7 @@ kind: Route
 metadata:
   name: wordpress
 spec:
-  host: jonas.apps.cluster5.karoshi.se
+  host: qsrproject.apps.cluster3.karoshi.se
   port:
     targetPort: 8080
   to:
@@ -12,3 +12,4 @@ spec:
     name: wordpress
     weight: 100
   wildcardPolicy: None
+
