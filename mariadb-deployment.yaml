@@ -22,4 +22,10 @@ spec:
         env:
           - name: MYSQL_ROOT_PASSWORD
             value: 'password'
-
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: mariadb-data
+      volumes:
+      - name: mariadb-data
+        persistentVolumeClaim:
+          claimName: mariadb-pvc
