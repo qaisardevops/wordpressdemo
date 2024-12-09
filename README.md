@@ -2,7 +2,19 @@
 
 This is a demo of OpenShift for students at Lernia education.
 
+## The namespace
 
+The namespace is set in `namespace.yaml` choose what you want and creat it:
+
+```sh
+$ oc apply -f namespace.yaml
+```
+
+Then use the namespace:
+
+```sh
+$ oc project myNameSpace
+```
 
 ## WordPress
 
