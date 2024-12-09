@@ -4,7 +4,7 @@ This is a demo of OpenShift for students at Lernia education.
 
 ## The namespace
 
-The namespace is set in `namespace.yaml` choose what you want and creat it:
+The namespace is set in `namespace.yaml` choose what you want and create it:
 
 ```sh
 $ oc apply -f namespace.yaml
