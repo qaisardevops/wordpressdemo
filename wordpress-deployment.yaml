@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: wordpress
 spec:
-  replicas: 3
+  replicas: 6
   selector:
     matchLabels:
       app: wordpress
