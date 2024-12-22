@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: wordpress-app
-        image: docker.io/qaisarwaseem/wordpress:latest               #quay.io/jonasbjork/lernialab:latest
+        image: quay.io/jonasbjork/lernialab:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
