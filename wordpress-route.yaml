@@ -4,7 +4,7 @@ kind: Route
 metadata:
   name: wordpress
 spec:
-  host: qsrproject.apps.cluster3.karoshi.se
+  host: qsrautomation.apps.cluster3.karoshi.se
   port:
     targetPort: 8080
   to:
