@@ -2,7 +2,7 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: wordpress
+  name: qsrautomation
 spec:
   host: qsrautomation.apps.cluster3.karoshi.se
   port:
