@@ -3,6 +3,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordpress
+  annotations:
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"word
+    press-stream:latest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"wordpress-app\")].image"}]'
 spec:
   replicas: 1
   selector:
@@ -15,7 +18,7 @@ spec:
     spec:
       containers:
       - name: wordpress-app
-        image: quay.io/jonasbjork/lernialab:latest      # ghcr.io/qaisardevops/wordpress:main
+        image: wordpress-stream:latest                 # quay.io/jonasbjork/lernialab:latest      # ghcr.io/qaisardevops/wordpress:main
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
