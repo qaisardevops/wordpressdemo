@@ -9,7 +9,7 @@ spec:
   - annotations: null
     from:
       kind: DockerImage
-      name:                      # quay.io/erik_wikstrom/wordpress:latest
+      name: quay.io/jonasbjork/mariadb:latest          # quay.io/erik_wikstrom/wordpress:latest
     importPolicy:
       importMode: Legacy
       scheduled: true
