@@ -2,9 +2,9 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: qsrautomation
+  name: qaisar-wordpress
 spec:
-  host: qsrautomation.apps.cluster5.karoshi.se
+  host: qaisar-wordpress.apps.cluster5.karoshi.se
   port:
     targetPort: 8080
   to:
