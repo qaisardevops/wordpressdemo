@@ -9,7 +9,7 @@ spec:
   - annotations: null
     from:
       kind: DockerImage
-      name: quay.io/jonasbjork/wordpress:latest
+      name: quay.io/jonasbjork/lernialab:latest
     importPolicy:
       importMode: Legacy
       scheduled: true
