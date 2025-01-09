@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  annotations:
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"word
+    press-stream:latest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"wordpress-app\")].image"}]'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+      - name: wordpress-app
+        image: wordpress-stream:latest                 # quay.io/jonasbjork/lernialab:latest      # ghcr.io/qaisardevops/wordpress:main
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: wordpress-data
+          mountPath: /opt/app-root/src
+        - name: wp-config-file
+          mountPath: /opt/app-root/src/wp-config.php
+          subPath: wp-config.php
+      volumes:
+      - name: wp-config-file
+        configMap:
+          name: wp-config-php
+          items:
+          - key: wp-config.php
+            path: wp-config.php
+      - name: wordpress-data
+        persistentVolumeClaim:
+          claimName: wordpress-pvc
